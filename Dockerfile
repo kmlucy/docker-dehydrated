@@ -1,4 +1,4 @@
-FROM python:latest
+FROM armhf/python:latest
 MAINTAINER Kyle Lucy
 
 RUN apt-get update && \
