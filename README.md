@@ -1,4 +1,4 @@
-# docker-dehydrated
+# docker-dehydrated-armhf
 
 To run:
 ```
@@ -8,7 +8,7 @@ Docker run \
   -e 'CF_KEY=API_key' \
   -e 'CF_HOST=host.domain.tld' \
   -v /path/to/certs:/dehydrated/certs \
-  kmlucy/docker-dehydrated
+  kmlucy/docker-dehydrated-armhf
   ```
   
   Uses: [lukas2511/dehydrated](https://github.com/lukas2511/dehydrated) and based on: [kappataumu/letsencrypt-cloudflare-hook](https://github.com/kappataumu/letsencrypt-cloudflare-hook)

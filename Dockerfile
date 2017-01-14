@@ -1,4 +1,4 @@
-FROM armhf/python:latest
+FROM resin/raspberrypi-python:3.5
 MAINTAINER Kyle Lucy
 
 RUN apt-get update && \
