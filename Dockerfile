@@ -14,6 +14,6 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
 WORKDIR /dehydrated
 
-CMD ./dehydrated -c -d $CF_HOST -t dns-01 -k 'hooks/cloudflare/hook.py'
+CMD ./dehydrated --register --accept-terms && ./dehydrated -c -d $CF_HOST -t dns-01 -k 'hooks/cloudflare/hook.py'
 
 VOLUME /dehydrated/certs
