@@ -1,5 +1,5 @@
 FROM resin/raspberrypi-python:3.5
-MAINTAINER Kyle Lucy
+LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
 
 RUN apt-get update && \
 apt-get install -y curl sed grep mktemp git && \
