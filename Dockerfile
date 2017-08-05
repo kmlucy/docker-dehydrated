@@ -1,16 +1,15 @@
-FROM python:latest
-MAINTAINER Kyle Lucy
+FROM python:3-alpine3.4
+LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
 
-RUN apt-get update && \
-apt-get install -y curl sed grep mktemp git && \
+RUN apk add --update curl openssl bash git && \
 cd / && \
 git clone https://github.com/lukas2511/dehydrated && \
 cd dehydrated && \
 mkdir hooks && \
 git clone https://github.com/kappataumu/letsencrypt-cloudflare-hook hooks/cloudflare && \
 pip install -r hooks/cloudflare/requirements.txt && \
-apt-get clean && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
+apk del git && \
+rm -rf /var/cache/apk/* /tmp/* /var/tmp/
 
 WORKDIR /dehydrated
 
