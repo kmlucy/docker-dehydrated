@@ -1,4 +1,4 @@
-FROM resin/raspberrypi-python:3.5
+FROM resin/raspberrypi3-python:3
 LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
 
 RUN apt-get update && \
