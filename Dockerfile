@@ -13,6 +13,6 @@ rm -rf /var/cache/apk/* /tmp/* /var/tmp/
 
 WORKDIR /dehydrated
 
-CMD ./dehydrated --register --accept-terms && ./dehydrated -c -d $CF_HOST -t dns-01 -k 'hooks/cloudflare/hook.py'
+CMD ./dehydrated --register --accept-terms && if [ -z "$CF_HOST" ]; then ./dehydrated -c -t dns-01 -k 'hooks/cloudflare/hook.py'; else ./dehydrated -c -d $CF_HOST -t dns-01 -k 'hooks/cloudflare/hook.py'; fi
 
 VOLUME /dehydrated/certs
