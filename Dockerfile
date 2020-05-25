@@ -3,7 +3,7 @@ LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
 
 RUN apk add --update curl openssl bash git && \
 cd / && \
-git clone https://github.com/lukas2511/dehydrated && \
+git clone https://github.com/dehydrated-io/dehydrated && \
 cd dehydrated && \
 mkdir hooks && \
 git clone https://github.com/kappataumu/letsencrypt-cloudflare-hook hooks/cloudflare && \
